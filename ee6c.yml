@@ -200,7 +200,7 @@ rules:
             - left_shift
         - key_code: delete_or_backspace
           repeat: false
-  # 功能相关
+# 功能相关
 - description: 功能相关
   manipulators:
   # 锁屏
@@ -239,3 +239,17 @@ rules:
           *left_fn
     to:
       key_code: volume_increment
+# 其它
+- description: 其它
+  manipulators:
+    # 回车键
+    - type: basic
+      from:
+        key_code: semicolon
+        modifiers:
+          mandatory:
+            *right_fn
+          optional:
+            - any
+      to:
+      - key_code: return_or_enter
