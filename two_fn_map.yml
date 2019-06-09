@@ -1,12 +1,17 @@
 ---
 # 锚点
 anchors: &achnors
-  if_mbp_13: &if_mbp_13
+  if_mbp_inner_keyboard: &if_mbp_inner_keyboard
     conditions:
       - identifiers:
           - vendor_id: 1452
             product_id: 630
             description: mbp 13
+        type: device_if
+      - identifiers:
+          - vendor_id: 1452
+            product_id: 628
+            description: mbp 15
         type: device_if
 title: two_fn_map
 rules:
@@ -14,7 +19,7 @@ rules:
 - description: mac自带键盘two_fn_map映射
   manipulators:
   - type: basic
-    <<: *if_mbp_13
+    <<: *if_mbp_inner_keyboard
     from:
       key_code: right_command
     to:
@@ -23,7 +28,7 @@ rules:
         - right_command
         - right_shift
   - type: basic
-    <<: *if_mbp_13
+    <<: *if_mbp_inner_keyboard
     from:
       key_code: left_option
     to:
