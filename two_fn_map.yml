@@ -1,0 +1,34 @@
+---
+# 锚点
+anchors: &achnors
+  if_mbp_13: &if_mbp_13
+    conditions:
+      - identifiers:
+          - vendor_id: 1452
+            product_id: 630
+            description: mbp 13
+        type: device_if
+title: two_fn_map
+rules:
+# two fn map 映射
+- description: mac自带键盘two_fn_map映射
+  manipulators:
+  - type: basic
+    <<: *if_mbp_13
+    from:
+      key_code: right_command
+    to:
+    - key_code: right_option
+      modifiers:
+        - right_command
+        - right_shift
+  - type: basic
+    <<: *if_mbp_13
+    from:
+      key_code: left_option
+    to:
+      - key_code: left_command
+        modifiers:
+          - left_option
+          - left_shift
+

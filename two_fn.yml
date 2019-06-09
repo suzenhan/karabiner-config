@@ -19,9 +19,18 @@ anchors: &achnors
       - bundle_identifiers:
           - ^com\.googlecode\.iterm2$
         type: frontmost_application_if
+  if_mbp_13: &if_mbp_13
+    conditions:
+      - identifiers:
+          - vendor_id: 1452
+            product_id: 630
+            description: mbp 13
+        type: device_if
 
-title: 66ec
+
+title: two_fn
 rules:
+
 # esc键
 - description: esc
   manipulators:
