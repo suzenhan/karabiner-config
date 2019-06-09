@@ -103,7 +103,6 @@ rules:
         - key_code: delete_or_backspace
     # 删除单词: back
     - type: basic
-      <<: *exclude_iterm
       from:
         key_code: w
         modifiers:
