@@ -7,8 +7,6 @@ anchors: &achnors
           - vendor_id: 1452
             product_id: 630
             description: mbp 13
-        type: device_if
-      - identifiers:
           - vendor_id: 1452
             product_id: 628
             description: mbp 15
