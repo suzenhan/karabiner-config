@@ -18,7 +18,7 @@ def main(name, map_name):
     complex_config = json.load(open(f'{name}.json'))
     target_profile = next((profile for profile in config['profiles'] if profile['name'] == name))
     map_config = json.load(open(f'{map_name}.json'))
-    target_profile['rules'] = complex_config['rules'] + map_config['rules']
+    target_profile['rules'] = map_config['rules'] + complex_config['rules']
     json.dump(config, open(karabiner_config_file, 'w'), indent=2)
 
 
