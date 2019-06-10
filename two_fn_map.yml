@@ -10,6 +10,9 @@ anchors: &achnors
           - vendor_id: 1452
             product_id: 628
             description: mbp 15
+          - vendor_id: 1204
+            product_id: 257
+            description: fc 660
         type: device_if
 title: two_fn_map
 rules:
