@@ -208,7 +208,32 @@ rules:
             - left_shift
         - key_code: delete_or_backspace
           repeat: false
-# 功能相关
+    # 撤销
+    - type: basic
+      <<: *exclude_iterm
+      from:
+        key_code: open_bracket
+        modifiers:
+          mandatory:
+            - left_control
+      to:
+        - key_code: z
+          modifiers:
+            - left_command
+    - type: basic
+      <<: *if_iterm
+      from:
+        key_code: open_bracket
+        modifiers:
+          mandatory:
+            - left_control
+      to:
+        - key_code: hyphen
+          modifiers:
+            - left_control
+
+
+  # 功能相关
 - description: 功能相关
   manipulators:
   # 锁屏
