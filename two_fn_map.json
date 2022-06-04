@@ -1,0 +1,125 @@
+{
+  "anchors": {
+    "if_mbp_inner_keyboard": {
+      "conditions": [
+        {
+          "identifiers": [
+            {
+              "description": "mbp 13",
+              "product_id": 630,
+              "vendor_id": 1452
+            },
+            {
+              "description": "old mbp 15",
+              "product_id": 628,
+              "vendor_id": 1452
+            },
+            {
+              "description": "new mbp 15",
+              "product_id": 636,
+              "vendor_id": 1452
+            },
+            {
+              "description": "fc 660",
+              "product_id": 257,
+              "vendor_id": 1204
+            }
+          ],
+          "type": "device_if"
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "description": "mac自带键盘two_fn_map映射",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "identifiers": [
+                {
+                  "description": "mbp 13",
+                  "product_id": 630,
+                  "vendor_id": 1452
+                },
+                {
+                  "description": "old mbp 15",
+                  "product_id": 628,
+                  "vendor_id": 1452
+                },
+                {
+                  "description": "new mbp 15",
+                  "product_id": 636,
+                  "vendor_id": 1452
+                },
+                {
+                  "description": "fc 660",
+                  "product_id": 257,
+                  "vendor_id": 1204
+                }
+              ],
+              "type": "device_if"
+            }
+          ],
+          "from": {
+            "key_code": "right_command"
+          },
+          "to": [
+            {
+              "key_code": "right_option",
+              "modifiers": [
+                "right_command",
+                "right_shift"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "identifiers": [
+                {
+                  "description": "mbp 13",
+                  "product_id": 630,
+                  "vendor_id": 1452
+                },
+                {
+                  "description": "old mbp 15",
+                  "product_id": 628,
+                  "vendor_id": 1452
+                },
+                {
+                  "description": "new mbp 15",
+                  "product_id": 636,
+                  "vendor_id": 1452
+                },
+                {
+                  "description": "fc 660",
+                  "product_id": 257,
+                  "vendor_id": 1204
+                }
+              ],
+              "type": "device_if"
+            }
+          ],
+          "from": {
+            "key_code": "left_option"
+          },
+          "to": [
+            {
+              "key_code": "left_command",
+              "modifiers": [
+                "left_option",
+                "left_shift"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ],
+  "title": "two_fn_map"
+}
