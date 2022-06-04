@@ -4,14 +4,12 @@
 import json
 from pathlib import Path
 
-import click
+from mando import command, main
 
 karabiner_config_file = f'{Path.home()}/.config/karabiner/karabiner.json'
 
 
-@click.command()
-@click.option('--name', help='complex rule title', required=True)
-@click.option('--map-name', help='two fn 映射', required=True)
+@command
 def main(name, map_name):
     config = json.load(open(karabiner_config_file))
 
@@ -22,5 +20,3 @@ def main(name, map_name):
     json.dump(config, open(karabiner_config_file, 'w'), indent=2)
 
 
-if __name__ == '__main__':
-    main()
