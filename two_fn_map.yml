@@ -40,4 +40,5 @@ rules:
         modifiers:
           - left_option
           - left_shift
+          - left_control
 

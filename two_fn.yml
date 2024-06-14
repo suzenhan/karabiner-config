@@ -9,6 +9,7 @@ anchors: &achnors
     - left_option
     - left_command
     - left_shift
+    - left_control
   exclude_iterm: &exclude_iterm
     conditions:
       - bundle_identifiers:
@@ -89,7 +90,7 @@ rules:
       to:
         - key_code: right_arrow
 # 行控制
-- description: 行控制
+- description: 行控制 
   manipulators:
     # 删除字符: forward
     - type: basic
@@ -244,7 +245,7 @@ rules:
         mandatory:
           *left_fn
     to:
-      shell_command: /usr/local/bin/m lock
+      shell_command: "/opt/homebrew/bin/m lock"
   # 禁音
   - type: basic
     from:
@@ -272,20 +273,6 @@ rules:
           *left_fn
     to:
       key_code: volume_increment
-# 其它
-- description: 其它
-  manipulators:
-    # 回车键
-    - type: basic
-      from:
-        key_code: semicolon
-        modifiers:
-          mandatory:
-            *right_fn
-          optional:
-            - any
-      to:
-      - key_code: return_or_enter
 
 # fn
 - description: fn键
@@ -404,10 +391,7 @@ rules:
         modifiers:
           mandatory:
             *right_fn
-          optional:
-            - any
-      to:
-        - key_code: f11
+
 
     - type: basic
       from:
